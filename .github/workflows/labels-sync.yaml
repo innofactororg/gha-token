@@ -1,4 +1,4 @@
-name: "Synchronize labels"
+name: "🏷️ Synchronize labels"
 on:
   workflow_dispatch:
     inputs:
@@ -9,7 +9,7 @@ on:
 
 jobs:
   labels:
-    name: "🏷️ Synchronize labels"
+    name: "Synchronize labels"
     runs-on: ubuntu-latest
     steps:
     - name: "Synchronize labels"

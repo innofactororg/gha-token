@@ -1,4 +1,4 @@
-name: "Changeset size"
+name: "📁 Changeset size"
 
 on:
   pull_request:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   labeler:
-    name: "📁 Changeset size"
+    name: "Changeset size"
     runs-on: ubuntu-latest
     steps:
     - name: "Labeler"

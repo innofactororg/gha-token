@@ -1,4 +1,4 @@
-name: "Release"
+name: "🎉 Release"
 run-name: "Create release ${{ github.event.inputs.tag }}"
 
 on:
@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
   release:
-    name: "🎉 Release"
+    name: "Release"
     runs-on: ubuntu-latest
     permissions:
       contents: write

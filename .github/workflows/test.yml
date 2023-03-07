@@ -1,4 +1,4 @@
-name: "Build and Test"
+name: "👀 Build and Test"
 
 on:
   workflow_dispatch:
@@ -19,7 +19,7 @@ concurrency:
 
 jobs:
   build:
-    name: "🔨 Build"
+    name: "Build"
     runs-on: ubuntu-latest
     steps:
     - name: "Setup node"
@@ -67,7 +67,7 @@ jobs:
         name: dist
         path: dist/
   test:
-    name: "👀 Test"
+    name: "Test"
     strategy:
       matrix:
         runs-on: ["ubuntu-latest", "macos-latest", "windows-latest"]

@@ -15,27 +15,42 @@ jobs:
       id: generate_token
       uses: innofactororg/gha-token@v1
       with:
+        # GitHub App ID.
+        #
+        # Required
         app_id: ${{ secrets.APP_ID }}
+
+        # Private key of the GitHub App (can be Base64 encoded).
+        #
+        # Required
         private_key: ${{ secrets.PRIVATE_KEY }}
 
-        # Optional.
-        # github_api_url: https://api.example.com
+        # The GitHub API URL.
+        #
+        # Default: ${{ github.api_url }}
+        github_api_url: https://api.example.com
 
-        # Optional.
-        # installation_id: 1337
+        # GitHub App installation ID for which the token will be requested.
+        #
+        # Default: The ID of the repository's installation
+        installation_id: 1337
 
-        # Optional.
-        # Using a YAML multiline string to avoid escaping the JSON quotes.
-        # permissions: |-
-        #   {"members": "read"}
+        # The JSON-stringified permissions granted to the token.
+        #
+        # Default: all the permissions given to the GitHub App
+        permissions: |-
+          {"members": "read"}
 
-        # Optional.
-        # repository: owner/repo
+        # The full name of the repository for which the token will be requested.
+        #
+        # Default: ${{ github.repository }}
+        repository: innofactororg/gha-token
 
-        # Optional.
-        # Using a YAML multiline string to avoid escaping the JSON quotes.
-        # repositories: |-
-        #   ["repo1","repo2"]
+        # The JSON-stringified repositories granted to the token.
+        #
+        # Default: all the repositories that the GitHub App has access to
+        repositories: |-
+          ["repo1","repo2"]
 
       - name: Use token
         env:

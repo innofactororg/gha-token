@@ -4,7 +4,7 @@ This action can be used to impersonate a GitHub App when
 `secrets.GITHUB_TOKEN`'s limitations are too restrictive and a personal
 access token is not suitable.
 
-## Example Workflow
+## Usage
 
 ```yaml
 jobs:
@@ -26,7 +26,7 @@ jobs:
 
         # Optional.
         # Using a YAML multiline string to avoid escaping the JSON quotes.
-        # permissions: >-
+        # permissions: |-
         #   {"members": "read"}
 
         # Optional.
@@ -34,7 +34,7 @@ jobs:
 
         # Optional.
         # Using a YAML multiline string to avoid escaping the JSON quotes.
-        # repositories: >-
+        # repositories: |-
         #   ["repo1","repo2"]
 
       - name: Use token

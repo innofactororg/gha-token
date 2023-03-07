@@ -1,12 +1,13 @@
-name: Release
-run-name: Create release ${{ github.event.inputs.tag }}
+name: "Release"
+run-name: "Create release ${{ github.event.inputs.tag }}"
 
 on:
   workflow_dispatch:
     inputs:
       tag:
-        description: The release tag
+        description: "The release tag"
         required: true
+        type: string
 
 concurrency:
   group: ${{ github.workflow }}
@@ -14,12 +15,12 @@ concurrency:
 
 jobs:
   release:
-    name: Release
+    name: "🎉 Release"
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
-    - name: Release
+    - name: "Release"
       uses: innofactororg/gha-release@v1
       with:
         tag: ${{ github.event.inputs.tag }}
